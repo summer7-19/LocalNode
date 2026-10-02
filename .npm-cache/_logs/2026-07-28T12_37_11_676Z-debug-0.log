@@ -1,0 +1,292 @@
+0 verbose cli D:\Node.js\node.exe D:\Node.js\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.12.0
+3 silly config load:file:D:\Node.js\node_modules\npm\npmrc
+4 silly config load:file:D:\Vue\ExerciseProject\localNote\.npmrc
+5 silly config load:file:C:\Users\26534\.npmrc
+6 silly config load:file:D:\Node.js\node_global\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:D:\Vue\ExerciseProject\localNote\.npm-cache\_logs\2026-07-28T12_37_11_676Z-
+10 verbose logfile D:\Vue\ExerciseProject\localNote\.npm-cache\_logs\2026-07-28T12_37_11_676Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\address' ]
+15 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\formula' ]
+16 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\hoek' ]
+17 silly reify mark retired [
+17 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\pinpoint'
+17 silly reify ]
+18 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\tlds' ]
+19 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\topo' ]
+20 silly reify mark retired [
+20 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@standard-schema\\spec'
+20 silly reify ]
+21 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\agent-base' ]
+22 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\ansi-regex' ]
+23 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\ansi-styles' ]
+24 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\asynckit' ]
+25 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\axios' ]
+26 silly reify mark retired [
+26 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\call-bind-apply-helpers'
+26 silly reify ]
+27 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\chalk' ]
+28 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\cliui' ]
+29 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\color-convert' ]
+30 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\color-name' ]
+31 silly reify mark retired [
+31 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\combined-stream'
+31 silly reify ]
+32 silly reify mark retired [
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\concurrently',
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\conc',
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\conc.cmd',
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\conc.ps1',
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\concurrently',
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\concurrently.cmd',
+32 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\concurrently.ps1'
+32 silly reify ]
+33 silly reify mark retired [
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\cross-env',
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env',
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env.cmd',
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env.ps1',
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env-shell',
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env-shell.cmd',
+33 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env-shell.ps1'
+33 silly reify ]
+34 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\cross-spawn' ]
+35 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\delayed-stream' ]
+36 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\dunder-proto' ]
+37 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\emoji-regex' ]
+38 silly reify mark retired [
+38 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\es-object-atoms'
+38 silly reify ]
+39 silly reify mark retired [
+39 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\es-set-tostringtag'
+39 silly reify ]
+40 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\escalade' ]
+41 silly reify mark retired [
+41 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\follow-redirects'
+41 silly reify ]
+42 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\form-data' ]
+43 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\function-bind' ]
+44 silly reify mark retired [
+44 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\get-caller-file'
+44 silly reify ]
+45 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\get-intrinsic' ]
+46 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\get-proto' ]
+47 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\has-flag' ]
+48 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\has-symbols' ]
+49 silly reify mark retired [
+49 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\has-tostringtag'
+49 silly reify ]
+50 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\hasown' ]
+51 silly reify mark retired [
+51 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\https-proxy-agent'
+51 silly reify ]
+52 silly reify mark retired [
+52 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\is-fullwidth-code-point'
+52 silly reify ]
+53 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\isexe' ]
+54 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\joi' ]
+55 silly reify mark retired [
+55 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\math-intrinsics'
+55 silly reify ]
+56 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\mime-db' ]
+57 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\mime-types' ]
+58 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\minimist' ]
+59 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\path-key' ]
+60 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\proxy-from-env' ]
+61 silly reify mark retired [
+61 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\require-directory'
+61 silly reify ]
+62 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\rxjs' ]
+63 silly reify mark retired [
+63 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\shebang-command'
+63 silly reify ]
+64 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\shebang-regex' ]
+65 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\shell-quote' ]
+66 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\string-width' ]
+67 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\strip-ansi' ]
+68 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\supports-color' ]
+69 silly reify mark retired [
+69 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\tree-kill',
+69 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\tree-kill',
+69 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\tree-kill.cmd',
+69 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\tree-kill.ps1'
+69 silly reify ]
+70 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\tslib' ]
+71 silly reify mark retired [
+71 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\wait-on',
+71 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\wait-on',
+71 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\wait-on.cmd',
+71 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\wait-on.ps1'
+71 silly reify ]
+72 silly reify mark retired [
+72 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\which',
+72 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\node-which',
+72 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\node-which.cmd',
+72 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\node-which.ps1'
+72 silly reify ]
+73 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\wrap-ansi' ]
+74 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\y18n' ]
+75 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\yargs' ]
+76 silly reify mark retired [ 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\yargs-parser' ]
+77 silly reify moves {
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\address': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\.address-e4NtZwE2',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\formula': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\.formula-zYwH3K7S',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\hoek': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\.hoek-Jj1v5TXd',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\pinpoint': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\.pinpoint-AksnW5OH',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\tlds': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\.tlds-yP6a7X5a',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\topo': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@hapi\\.topo-lIuBy8PW',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@standard-schema\\spec': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\@standard-schema\\.spec-mjm7RZtf',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\agent-base': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.agent-base-7Mgd3AL2',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\ansi-regex': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.ansi-regex-ClJsafGP',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\ansi-styles': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.ansi-styles-1oQ7A8Jo',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\asynckit': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.asynckit-SDMV8F7g',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\axios': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.axios-2KE8x8vP',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\call-bind-apply-helpers': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.call-bind-apply-helpers-p8BbpST1',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\chalk': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.chalk-EOE5e90W',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\cliui': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.cliui-0XoXfdcB',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\color-convert': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.color-convert-K4DnV9Bn',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\color-name': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.color-name-yZ0mNxxV',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\combined-stream': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.combined-stream-tZgu6x4X',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\concurrently': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.concurrently-ykzNotN9',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\conc': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.conc-ZFHvnbuD',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\conc.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.conc.cmd-ZaMnVdgz',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\conc.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.conc.ps1-UqoJWl3k',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\concurrently': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.concurrently-kSQPftNA',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\concurrently.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.concurrently.cmd-fzGrqUCd',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\concurrently.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.concurrently.ps1-nazOOjlx',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\cross-env': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.cross-env-AwHMoDFi',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.cross-env-rAxliJSL',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.cross-env.cmd-DVMhVgEk',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.cross-env.ps1-jcDxzdFL',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env-shell': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.cross-env-shell-Ziw6yQfi',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env-shell.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.cross-env-shell.cmd-CiXZ09hz',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\cross-env-shell.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.cross-env-shell.ps1-iVoL5vgp',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\cross-spawn': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.cross-spawn-lrrOHJxe',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\delayed-stream': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.delayed-stream-elYb6da6',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\dunder-proto': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.dunder-proto-DwZqRfp6',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\emoji-regex': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.emoji-regex-jeJARnVL',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\es-object-atoms': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.es-object-atoms-BFpuvVMy',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\es-set-tostringtag': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.es-set-tostringtag-ZM50dGVo',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\escalade': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.escalade-rTc8H7Ik',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\follow-redirects': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.follow-redirects-QvybFQKt',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\form-data': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.form-data-JeeAj3Py',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\function-bind': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.function-bind-FtnmtYXy',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\get-caller-file': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.get-caller-file-yT4i0thF',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\get-intrinsic': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.get-intrinsic-ZhhGftJx',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\get-proto': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.get-proto-zTHahIoP',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\has-flag': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.has-flag-SZwFP9T4',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\has-symbols': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.has-symbols-qycazH84',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\has-tostringtag': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.has-tostringtag-fizr1t1G',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\hasown': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.hasown-9W5iviPj',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\https-proxy-agent': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.https-proxy-agent-93gNnWR8',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\is-fullwidth-code-point': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.is-fullwidth-code-point-coqhPWXB',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\isexe': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.isexe-9KlsjnHH',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\joi': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.joi-U5McUxTH',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\math-intrinsics': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.math-intrinsics-waBOyaf4',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\mime-db': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.mime-db-ru6exy3z',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\mime-types': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.mime-types-Qm3aoC7P',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\minimist': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.minimist-esRnXa1X',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\path-key': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.path-key-Dxj532GZ',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\proxy-from-env': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.proxy-from-env-uQdUihfl',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\require-directory': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.require-directory-v5unUziD',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\rxjs': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.rxjs-l7QP7nlU',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\shebang-command': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.shebang-command-BwLg7se7',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\shebang-regex': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.shebang-regex-RVXc4IcY',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\shell-quote': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.shell-quote-6Meat1EA',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\string-width': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.string-width-d3ZQldET',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\strip-ansi': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.strip-ansi-Uexhligv',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\supports-color': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.supports-color-d9S3EPkT',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\tree-kill': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.tree-kill-XWki4UcS',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\tree-kill': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.tree-kill-E32F3K6e',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\tree-kill.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.tree-kill.cmd-a3yClPXR',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\tree-kill.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.tree-kill.ps1-R5rn1An9',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\tslib': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.tslib-dEw50MdC',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\wait-on': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.wait-on-D54ZJWqu',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\wait-on': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.wait-on-AEV7q6kW',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\wait-on.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.wait-on.cmd-93w4ZsTh',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\wait-on.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.wait-on.ps1-oflsq9ot',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\which': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.which-hVj8USRe',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\node-which': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.node-which-Rg53NdvA',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\node-which.cmd': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.node-which.cmd-0uD0ccM2',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\node-which.ps1': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.bin\\.node-which.ps1-FoAMZDJE',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\wrap-ansi': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.wrap-ansi-Zq284MZy',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\y18n': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.y18n-o8xP8DoB',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\yargs': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.yargs-dfca46UC',
+77 silly reify   'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\yargs-parser': 'D:\\Vue\\ExerciseProject\\localNote\\node_modules\\.yargs-parser-nokkAu3e'
+77 silly reify }
+78 silly REMOVE node_modules/yargs-parser
+79 silly REMOVE node_modules/yargs
+80 silly REMOVE node_modules/y18n
+81 silly REMOVE node_modules/wrap-ansi
+82 silly REMOVE node_modules/which
+83 silly REMOVE node_modules/wait-on
+84 silly REMOVE node_modules/tslib
+85 silly REMOVE node_modules/tree-kill
+86 silly REMOVE node_modules/supports-color
+87 silly REMOVE node_modules/strip-ansi
+88 silly REMOVE node_modules/string-width
+89 silly REMOVE node_modules/shell-quote
+90 silly REMOVE node_modules/shebang-regex
+91 silly REMOVE node_modules/shebang-command
+92 silly REMOVE node_modules/rxjs
+93 silly REMOVE node_modules/require-directory
+94 silly REMOVE node_modules/proxy-from-env
+95 silly REMOVE node_modules/path-key
+96 silly REMOVE node_modules/minimist
+97 silly REMOVE node_modules/mime-types
+98 silly REMOVE node_modules/mime-db
+99 silly REMOVE node_modules/math-intrinsics
+100 silly REMOVE node_modules/joi
+101 silly REMOVE node_modules/isexe
+102 silly REMOVE node_modules/is-fullwidth-code-point
+103 silly REMOVE node_modules/https-proxy-agent
+104 silly REMOVE node_modules/hasown
+105 silly REMOVE node_modules/has-tostringtag
+106 silly REMOVE node_modules/has-symbols
+107 silly REMOVE node_modules/has-flag
+108 silly REMOVE node_modules/get-proto
+109 silly REMOVE node_modules/get-intrinsic
+110 silly REMOVE node_modules/get-caller-file
+111 silly REMOVE node_modules/function-bind
+112 silly REMOVE node_modules/form-data
+113 silly REMOVE node_modules/follow-redirects
+114 silly REMOVE node_modules/escalade
+115 silly REMOVE node_modules/es-set-tostringtag
+116 silly REMOVE node_modules/es-object-atoms
+117 silly REMOVE node_modules/emoji-regex
+118 silly REMOVE node_modules/dunder-proto
+119 silly REMOVE node_modules/delayed-stream
+120 silly REMOVE node_modules/cross-spawn
+121 silly REMOVE node_modules/cross-env
+122 silly REMOVE node_modules/concurrently
+123 silly REMOVE node_modules/combined-stream
+124 silly REMOVE node_modules/color-name
+125 silly REMOVE node_modules/color-convert
+126 silly REMOVE node_modules/cliui
+127 silly REMOVE node_modules/chalk
+128 silly REMOVE node_modules/chalk/node_modules/supports-color
+129 silly REMOVE node_modules/call-bind-apply-helpers
+130 silly REMOVE node_modules/axios
+131 silly REMOVE node_modules/asynckit
+132 silly REMOVE node_modules/ansi-styles
+133 silly REMOVE node_modules/ansi-regex
+134 silly REMOVE node_modules/agent-base
+135 silly REMOVE node_modules/@standard-schema/spec
+136 silly REMOVE node_modules/@hapi/topo
+137 silly REMOVE node_modules/@hapi/tlds
+138 silly REMOVE node_modules/@hapi/pinpoint
+139 silly REMOVE node_modules/@hapi/hoek
+140 silly REMOVE node_modules/@hapi/formula
+141 silly REMOVE node_modules/@hapi/address
+142 verbose cwd D:\Vue\ExerciseProject\localNote
+143 verbose os Windows_NT 10.0.26200
+144 verbose node v24.12.0
+145 verbose npm  v11.6.2
+146 verbose exit 0
+147 info ok

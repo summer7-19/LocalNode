@@ -113,13 +113,16 @@ function insertDrawing() {
 </script>
 
 <template>
-  <el-dialog v-model="visible" title="手写画板" width="900px" class="handwriting-dialog" append-to-body destroy-on-close @opened="initialize">
+  <el-dialog v-model="visible" title="手写画板" width="900px" class="handwriting-dialog" append-to-body destroy-on-close
+    @opened="initialize">
     <div class="handwriting-toolbar">
-      <el-segmented v-model="tool" :options="[{ label: '画笔', value: 'pen', icon: EditPen }, { label: '橡皮', value: 'eraser', icon: MagicStick }]" />
+      <el-segmented v-model="tool"
+        :options="[{ label: '画笔', value: 'pen', icon: EditPen }, { label: '橡皮', value: 'eraser', icon: MagicStick }]" />
       <div class="tool-divider"></div>
       <label>颜色 <el-color-picker v-model="color" :disabled="tool === 'eraser'" /></label>
       <label class="width-control">粗细 <el-slider v-model="lineWidth" :min="1" :max="18" :show-tooltip="false" /></label>
-      <span class="width-preview" :style="{ width: `${lineWidth}px`, height: `${lineWidth}px`, background: tool === 'eraser' ? '#cfd6d1' : color }"></span>
+      <span class="width-preview"
+        :style="{ width: `${lineWidth}px`, height: `${lineWidth}px`, background: tool === 'eraser' ? '#cfd6d1' : color }"></span>
       <div class="tool-spacer"></div>
       <el-tooltip content="撤销"><el-button :icon="RefreshLeft" :disabled="!history.length" @click="undo" /></el-tooltip>
       <el-popconfirm title="确定清空整个画板吗？" confirm-button-text="清空" cancel-button-text="取消" @confirm="clearCanvas()">
@@ -127,22 +130,81 @@ function insertDrawing() {
       </el-popconfirm>
     </div>
     <div ref="canvasWrap" class="canvas-wrap">
-      <canvas ref="canvas" @pointerdown="startStroke" @pointermove="drawStroke" @pointerup="endStroke" @pointercancel="endStroke" @pointerleave="endStroke"></canvas>
+      <canvas ref="canvas" @pointerdown="startStroke" @pointermove="drawStroke" @pointerup="endStroke"
+        @pointercancel="endStroke" @pointerleave="endStroke"></canvas>
     </div>
     <p class="handwriting-hint">支持鼠标、触屏和压感手写笔 · 手写内容会作为本地图片插入笔记</p>
-    <template #footer><el-button @click="visible = false">取消</el-button><el-button type="primary" @click="insertDrawing">插入笔记</el-button></template>
+    <template #footer><el-button @click="visible = false">取消</el-button><el-button type="primary"
+        @click="insertDrawing">插入笔记</el-button></template>
   </el-dialog>
 </template>
 
 <style scoped>
-.handwriting-toolbar { display: flex; min-height: 46px; align-items: center; gap: 12px; padding: 0 2px 12px; }
-.handwriting-toolbar label { display: flex; align-items: center; gap: 8px; color: #707a75; font-size: 12px; white-space: nowrap; }
-.tool-divider { width: 1px; height: 24px; background: #e3e7e3; }
-.tool-spacer { flex: 1; }
-.width-control { width: 150px; }
-.width-control :deep(.el-slider) { width: 105px; }
-.width-preview { display: block; min-width: 2px; min-height: 2px; max-width: 18px; max-height: 18px; border-radius: 50%; }
-.canvas-wrap { width: 100%; overflow: auto; border: 1px solid #dfe4df; border-radius: 10px; background-color: #fff; background-image: linear-gradient(#eff2ef 1px, transparent 1px), linear-gradient(90deg, #eff2ef 1px, transparent 1px); background-size: 24px 24px; box-shadow: inset 0 1px 4px rgba(35,55,46,.04); }
-canvas { display: block; max-width: none; cursor: crosshair; touch-action: none; }
-.handwriting-hint { margin: 9px 3px 0; color: #9aa29e; font-size: 11px; }
+.handwriting-toolbar {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 2px 12px;
+}
+
+.handwriting-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #707a75;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tool-divider {
+  width: 1px;
+  height: 24px;
+  background: #e3e7e3;
+}
+
+.tool-spacer {
+  flex: 1;
+}
+
+.width-control {
+  width: 150px;
+}
+
+.width-control :deep(.el-slider) {
+  width: 105px;
+}
+
+.width-preview {
+  display: block;
+  min-width: 2px;
+  min-height: 2px;
+  max-width: 18px;
+  max-height: 18px;
+  border-radius: 50%;
+}
+
+.canvas-wrap {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #dfe4df;
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: linear-gradient(#eff2ef 1px, transparent 1px), linear-gradient(90deg, #eff2ef 1px, transparent 1px);
+  background-size: 24px 24px;
+  box-shadow: inset 0 1px 4px rgba(35, 55, 46, .04);
+}
+
+canvas {
+  display: block;
+  max-width: none;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.handwriting-hint {
+  margin: 9px 3px 0;
+  color: #9aa29e;
+  font-size: 11px;
+}
 </style>

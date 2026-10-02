@@ -1,0 +1,8 @@
+.env
+
+main.cjs
+preload.cjs
+
+node_modules/
+dist/
+package-lock.json
