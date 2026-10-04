@@ -1,7 +1,7 @@
 import pool from "../db/db";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
 import { Know,updateKnow } from "../types/know";
-
+import { PoolConnection } from "mysql2/promise";
 
 export interface RowKnow extends RowDataPacket {
     knowledgeID:number,
@@ -37,8 +37,8 @@ export const updateKnowledgeRepo  = async (id:number,parentId:number|null,data: 
     return result
 }
 
-export const deleteKnowledgeRepo = async (id:number,userId:number) => {
-    const [result] = await pool.execute<ResultSetHeader>(`delete from knowledgeBase where knowledgeID = ? and userID =?`, [id,userId])
+export const deleteKnowledgeRepo = async (connection:PoolConnection,id:number,userId:number) => {
+    const [result] = await connection.execute<ResultSetHeader>(`delete from knowledgeBase where knowledgeID = ? and userID =?`, [id,userId])
     return result
 }
 
@@ -50,7 +50,7 @@ export const findKnowledgeByNameRepo = async (name:string,userId:number,parentID
 
 
 export const existKnowledgeRepo = async (id:number,parentId:number|null,data: updateKnow,userId:number) => {
-    const [rows] = await pool.query(`select exists(select 1 from knowledgeBase where knowledgeID != ? and userID = ? and parentKey =? and knowledgeName = ?) `, [id,userId,parentId??0,data.knowledgeName])
+    const [rows] = await pool.query(`select exists(select 1 from knowledgeBase where knowledgeID <> ? and userID = ? and parentKey =? and knowledgeName = ?) `, [id,userId,parentId??0,data.knowledgeName])
     const result = rows as { exists:number}[]
     return result[0]?.exists === 1;
 }

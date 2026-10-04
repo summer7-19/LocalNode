@@ -7,8 +7,8 @@ import { postNoteSchema,updateNoteSchema,noteIDParamsSchemea } from "../schema/n
 const router = Router();
 
 router.get("/", authMiddleware, getNoteController);
-// router.get("/:id",authMiddleware,vaildateID(noteIDParamsSchemea),getNoteIdController);
+router.get("/:id",authMiddleware,vaildateMiddleware("params",noteIDParamsSchemea),getNoteIdController);
 // router.post("/",authMiddleware,vaildateMiddleware(postNoteSchema),createNoteController)
-router.put("/:id",authMiddleware,vaildateID(noteIDParamsSchemea),vaildateMiddleware(updateNoteSchema),updateNoteController)
-router.delete("/:id",authMiddleware,vaildateID(noteIDParamsSchemea),deleteNoteController)
+router.put("/:id",authMiddleware,vaildateMiddleware("params",noteIDParamsSchemea),vaildateMiddleware("body",updateNoteSchema),updateNoteController)
+router.delete("/:id",authMiddleware,vaildateMiddleware("params",noteIDParamsSchemea),deleteNoteController)
 export default router;

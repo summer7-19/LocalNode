@@ -31,7 +31,7 @@ app.use('/api/user',userRoute)
 app.use('/api/note',noteRoute)
 app.use('/api/know',knowRoute)
 app.use('/api',authRoute)
-app.use(vaildateMiddleware)
+// app.use(vaildateMiddleware)
 app.use(errorMiddleware)
 
 app.listen(config.server.port, async () => {

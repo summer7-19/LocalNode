@@ -6,8 +6,8 @@ import { authSchema,authLoginSchema} from "../schema/auth.schema";
 
 const router = Router();
 
-router.post('/login',vaildateMiddleware(authLoginSchema),login)
+router.post('/login',vaildateMiddleware("body",authLoginSchema),login)
 
-router.post('/register',vaildateMiddleware(authSchema),Register)
+router.post('/register',vaildateMiddleware("body",authSchema),Register)
 
 export default router

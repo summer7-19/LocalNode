@@ -1,5 +1,3 @@
-import pool from "../db/db"
-import { ResultSetHeader,RowDataPacket } from "mysql2"
 import type{registerDto, loginDto} from "../schema/auth.schema"
 import { RegisterRepo,LoginRepo } from "../repositories/auth.repositories"
 import bcrypt from "bcrypt"

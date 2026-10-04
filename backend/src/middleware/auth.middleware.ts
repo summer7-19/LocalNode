@@ -2,10 +2,11 @@ import type { Request,Response,NextFunction } from "express"
 import { AppError } from "../errors/app.error"
 import jwt, { JwtHeader, JwtPayload } from 'jsonwebtoken'
 import { config } from "../config/env"
+import { AuthPayload } from "../types/auth"
 
-interface JWTuserPayload{
-    userID:number
-}
+// interface JWTuserPayload{
+//     userID:number
+// }
 
 export const authMiddleware=async(req:Request,res:Response,next:NextFunction)=>{
     const result=req.headers.authorization
@@ -18,7 +19,7 @@ export const authMiddleware=async(req:Request,res:Response,next:NextFunction)=>{
     }
 
     try{
-        const payload=jwt.verify(token,config.jwt.JWT_SECRET) as JWTuserPayload
+        const payload=jwt.verify(token,config.jwt.JWT_SECRET) as AuthPayload
         // console.log(payload)
         req.user=payload
         next()

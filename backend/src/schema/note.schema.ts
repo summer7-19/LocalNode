@@ -8,6 +8,7 @@ export const updateNoteSchema = z.object({
     parentID:z.number(),
     noteName:z.string(),
     content:z.string(),
+    version:z.number()
 })
 export type NoteDto = z.infer<typeof postNoteSchema>; 
 export type updateNoteDto = z.infer<typeof updateNoteSchema>;

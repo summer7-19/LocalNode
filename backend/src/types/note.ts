@@ -8,4 +8,5 @@ export interface updateNoteType {
     parentID:number,
     noteName:string,
     content:string,
+    version:number
 }
