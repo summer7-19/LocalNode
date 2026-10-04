@@ -30,13 +30,14 @@ export const getNoteListRepo  = async (id: number,userId:number,size:number,offs
 }
 
 export const countNoteListRepo  = async (id: number,userId:number) => {
-    const total = await pool.execute<RowNote[]>(`select count(*) as total from note as n join knowledgeBase as k on n.parentID = k.knowledgeID where n.parentID = ? and k.userID=?`, [id,userId])
-    return total
+    const [rows] = await pool.query(`select count(*) as total from note as n join knowledgeBase as k on n.parentID = k.knowledgeID where n.parentID = ? and k.userID=?`, [id,userId])
+    const result=rows as {total:number}[]
+    return result[0]?.total
 }
 
 export const addNoteRepo  = async (id:number,data: Note,userId:number) => {
     // console.log(data,id)
-    const [result] = await pool.execute<ResultSetHeader>(`insert into note (parentID,noteName,content) values (?,?,?,?)`, [id,data.noteName, data.content])
+    const [result] = await pool.execute<ResultSetHeader>(`insert into note (parentID,noteName,content) values (?,?,?)`, [id,data.noteName, data.content])
     return result
 }
 
@@ -47,8 +48,13 @@ export const updateNoteRepo  = async (id:number,data: updateNoteType,userId:numb
     return result
 }
 
-export const deleteNoteRepo = async (connection: PoolConnection,id:number,userId:number) => {
-    const [result] = await connection.execute<ResultSetHeader>(`delete from note as n join knowledgeBase as k on n.parentID=k.knowledgeID where n.noteID = ? and k.userID =?`, [id,userId])
+export const deleteNoteRepo = async (id:number,userId:number) => {
+    const [result] = await pool.execute<ResultSetHeader>(`delete from note as n join knowledgeBase as k on n.parentID=k.knowledgeID where n.noteID = ? and k.userID =?`, [id,userId])
+    return result
+}
+
+export const deleteAllNoteRepo = async (connection: PoolConnection,id:number,userId:number) => {
+    const [result] = await connection.execute<ResultSetHeader>(`delete from note as n join knowledgeBase as k on n.parentID=k.knowledgeID where n.parentID = ? and k.userID =?`, [id,userId])
     return result
 }
 

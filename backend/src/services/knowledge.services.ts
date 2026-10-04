@@ -1,5 +1,5 @@
 import { getKnowledgeRepo, getKnowledgeRepoId, addKnowledgeRepo, updateKnowledgeRepo, deleteKnowledgeRepo, findKnowledgeByNameRepo, existKnowledgeRepo } from "../repositories/know.repositories"
-import { deleteNoteRepo, getNoteRepo } from "../repositories/note.repositories"
+import { deleteAllNoteRepo, getNoteRepo } from "../repositories/note.repositories"
 import { Know, updateKnow } from "../types/know"
 import { buildKnowledgeTree } from "../utils/buildKnowledgeTree"
 import { attachNotesToTree } from "../utils/attachNotesToTree"
@@ -66,7 +66,7 @@ export const deleteKnowledge = async (id: number, userId: number) => {
         // if (!knowledge) {
         //     throw new AppError("知识库不存在", 404)
         // }
-        const resNote = await deleteNoteRepo(connection, id, userId)
+        const resNote = await deleteAllNoteRepo(connection, id, userId)
         const result = await deleteKnowledgeRepo(connection, id, userId)
         if (result.affectedRows === 0) {
             throw new AppError("删除失败", 404)

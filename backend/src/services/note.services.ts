@@ -62,12 +62,11 @@ export const updateNote = async (id:number,data: updateNoteType,userId:number) =
 }
 
 export const deleteNote = async (id:number,userId:number) => {
-    const connection = await pool.getConnection()
-    const knowledge=await getKnowledgeId(id,userId)
-    if(!knowledge){
-        throw new AppError("knowledge not found",404)
-    }
-    const result = await deleteNoteRepo(connection,id,userId)
+    // const knowledge=await getKnowledgeId(id,userId)
+    // if(!knowledge){
+    //     throw new AppError("knowledge not found",404)
+    // }
+    const result = await deleteNoteRepo(id,userId)
     if(result.affectedRows===0){
         throw new AppError("删除失败",404)
     }

@@ -6,14 +6,14 @@ import { ValidateRequest } from '../types/requset';
 import { asyncHandler } from '../utils/asyncHandler';
 
 
-export const getKnowledgeController = async (req: Request, res: Response) => {
+export const getKnowledgeController = asyncHandler(async (req: Request, res: Response) => {
     const userId=req.user!.id
     if(!userId){
         throw new AppError('未登录',401)
     }
     const result=await getKnowledge(userId)
     res.status(200).json(result)
-}
+})
 
 export const getKnowledgeIdController =asyncHandler( async (req: Request<{id:string}>, res: Response) => {
     const id=Number((req.validated.params as { id: string }) .id)

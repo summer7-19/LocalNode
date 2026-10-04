@@ -6,6 +6,7 @@ import { PoolConnection } from "mysql2/promise";
 export interface RowKnow extends RowDataPacket {
     knowledgeID:number,
     userID:number,
+    parentKey:number,
     parentID:number|null,
     knowledgeName:string,
     description: string,
@@ -44,7 +45,7 @@ export const deleteKnowledgeRepo = async (connection:PoolConnection,id:number,us
 
 
 export const findKnowledgeByNameRepo = async (name:string,userId:number,parentID:number|null) => {
-    const [result] = await pool.query(`select knowledgeID from knowledgeBase where knowledgeName = ? and userID = ? and (parentID = ? or parentKey= ?`, [name,userId,parentID??0])
+    const [result] = await pool.query(`select knowledgeID from knowledgeBase where knowledgeName = ? and userID = ? and (parentID = ? or parentKey= ?)`, [name,userId,parentID??0])
     return result
 }
 

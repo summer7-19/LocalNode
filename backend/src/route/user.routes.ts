@@ -9,9 +9,9 @@ const router = Router()
 router.get('/' ,getUsers) // get all users
 router.get('/me',authMiddleware, getCurrentUser)
 router.get('/:id',vaildateID(userIDParamsSchemea), getUsersById) // get user by id
-router.post('/',vaildateMiddleware(createUserSchema),createUsers)
-router.put('/:id',vaildateID(userIDParamsSchemea),vaildateMiddleware(updateUserSchema), updateUsers) // update user by id
-router.delete('/:id',vaildateID(userIDParamsSchemea), deleteUsers) // delete user by id
+router.post('/',vaildateMiddleware("body",createUserSchema),createUsers)
+router.put('/:id',vaildateMiddleware("params",userIDParamsSchemea),vaildateMiddleware("body",updateUserSchema), updateUsers) // update user by id
+router.delete('/:id',vaildateMiddleware("params",userIDParamsSchemea), deleteUsers) // delete user by id
 
 
 

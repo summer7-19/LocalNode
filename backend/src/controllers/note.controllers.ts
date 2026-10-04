@@ -5,16 +5,16 @@ import { AppError } from '../errors/app.error';
 import {asyncHandler} from '../utils/asyncHandler';
 
 
-export const getNoteController = async (req: Request, res: Response) => {
+export const getNoteController = asyncHandler(async (req: Request, res: Response) => {
     const userId=req.user!.id
     if(!userId){
         throw new AppError('未登录',401)
     }
     const result=await getNote(userId)
     res.status(200).json(result)
-}
+})
 
-export const getNoteIdController = async (req: Request<{id:string}>, res: Response) => {
+export const getNoteIdController = asyncHandler(async (req: Request<{id:string}>, res: Response) => {
     const id=Number(req.params.id)
     const userId=req.user!.id
     const result=await getNoteId(id,userId)
@@ -22,20 +22,20 @@ export const getNoteIdController = async (req: Request<{id:string}>, res: Respon
         throw new AppError('没有笔记',404)
     }
     res.status(200).json(result)
-}
+})
 
 export const getNoteListController =asyncHandler(async (req: Request<{id:string},{},Note,{page:string,pageSize:string}>, res: Response) => {
     const userId=req.user!.id
     const id=Number(req.params.id)
-    const {page,pageSize}=req.validated!.query as {
+    const {page,size}=req.validated!.query as {
         page:number,
-        pageSize:number
+        size:number
     }
-    const result=await getNoteList(id,userId,page,pageSize)
+    const result=await getNoteList(id,userId,page,size)
     res.status(200).json(result)
 })
 
-export const createNoteController = async (req: Request<{id:string},{},Note>, res: Response) => {
+export const createNoteController = asyncHandler(async (req: Request<{id:string},{},Note>, res: Response) => {
     const userId=req.user!.id
     const data=req.body
     const id=Number(req.params.id)
@@ -47,10 +47,10 @@ export const createNoteController = async (req: Request<{id:string},{},Note>, re
       message: "创建成功",
       data: result
     })
-}
+})
 
 
-export const updateNoteController = async (req: Request<{id:string},{},updateNoteType>, res: Response) => {
+export const updateNoteController = asyncHandler(async (req: Request<{id:string},{},updateNoteType>, res: Response) => {
     const id=Number(req.params.id)
     const data=req.body
     const userId=req.user!.id
@@ -60,7 +60,7 @@ export const updateNoteController = async (req: Request<{id:string},{},updateNot
         throw new AppError('更新笔记失败',404)
     }
     res.status(200).json(result)
-}
+})
 
 export const deleteNoteController = asyncHandler(async (req: Request<{id:string}>, res: Response) => {
     const id=Number(req.params.id)
