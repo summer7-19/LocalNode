@@ -1,16 +1,34 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { ArrowLeft, Lock, User } from '@element-plus/icons-vue'
-import { login } from '@/api/user'
+import { ArrowLeft, Lock, Message, User } from '@element-plus/icons-vue'
+import { login, register } from '../api/auth'
 
 const router = useRouter()
+const mode = ref('login')
+const loading = ref(false)
 const form = ref({
   account: '',
-  password: ''
+  userName: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
 })
-const loading = ref(false)
+
+const isLogin = computed(() => mode.value === 'login')
+const headingTitle = computed(() => isLogin.value ? '登录你的笔记空间' : '创建你的笔记空间')
+const headingSub = computed(() => isLogin.value ? '登录后即可同步目录、标签和文档内容。' : '注册后即可开始创建目录和笔记。')
+
+function switchMode(next) {
+  mode.value = next
+  form.value.password = ''
+  form.value.confirmPassword = ''
+}
+
+function getErrorMessage(error) {
+  return error?.response?.data?.message || error?.message || '请稍后重试'
+}
 
 async function handleLogin() {
   const account = form.value.account.trim()
@@ -19,14 +37,60 @@ async function handleLogin() {
     return
   }
 
-  // TODO: 由你在这里接入 axios 登录接口，例如：
+  loading.value = true
+  try {
+    const { data } = await login({ account, password: form.value.password })
+    localStorage.setItem('localnote-token', data.accessToken)
+    ElMessage.success('登录成功')
+    router.push('/')
+  } catch (error) {
+    ElMessage.error(getErrorMessage(error))
+  } finally {
+    loading.value = false
+  }
+}
 
-  const data = await login({ account, password: form.value.password })
-  localStorage.setItem('localnote-token', data.accessToken)
-  router.push('/')
+async function handleRegister() {
+  const userName = form.value.userName.trim()
+  const email = form.value.email.trim()
+  const password = form.value.password
+  const confirmPassword = form.value.confirmPassword
 
+  if (!userName || !email || !password || !confirmPassword) {
+    ElMessage.warning('请完整填写注册信息')
+    return
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    ElMessage.warning('请输入正确的邮箱地址')
+    return
+  }
+  if (password.length < 6 || password.length > 12) {
+    ElMessage.warning('密码长度需要在 6 到 12 位之间')
+    return
+  }
+  if (password !== confirmPassword) {
+    ElMessage.warning('两次输入的密码不一致')
+    return
+  }
 
-  // ElMessage.info('登录接口待接入：请先在 frontend/api 中完成 axios 封装')
+  loading.value = true
+  try {
+    await register({ userName, email, password })
+    ElMessage.success('注册成功，请登录')
+    form.value.account = userName
+    form.value.password = ''
+    form.value.confirmPassword = ''
+    mode.value = 'login'
+  } catch (error) {
+    ElMessage.error(getErrorMessage(error))
+  } finally {
+    loading.value = false
+  }
+}
+
+function handleSubmit() {
+  if (isLogin.value) handleLogin()
+  else handleRegister()
 }
 </script>
 
@@ -49,28 +113,56 @@ async function handleLogin() {
       </div>
 
       <div class="login-heading">
-        <p class="eyebrow">WELCOME BACK</p>
-        <h1>登录你的笔记空间</h1>
-        <p>登录后即可同步目录、标签和文档内容。</p>
+        <p class="eyebrow">{{ isLogin ? 'WELCOME BACK' : 'JOIN LOCALNOTE' }}</p>
+        <h1>{{ headingTitle }}</h1>
+        <p>{{ headingSub }}</p>
       </div>
 
-      <el-form class="login-form" label-position="top" @submit.prevent="handleLogin">
-        <el-form-item label="账号 / 邮箱">
-          <el-input v-model="form.account" size="large" placeholder="请输入账号或邮箱" :prefix-icon="User"
-            autocomplete="username" />
-        </el-form-item>
+      <el-form class="login-form" label-position="top" @submit.prevent="handleSubmit">
+        <template v-if="isLogin">
+          <el-form-item label="账号 / 邮箱">
+            <el-input v-model="form.account" size="large" placeholder="请输入账号或邮箱" :prefix-icon="User"
+              autocomplete="username" />
+          </el-form-item>
+        </template>
+
+        <template v-else>
+          <el-form-item label="用户名">
+            <el-input v-model="form.userName" size="large" placeholder="请输入用户名" :prefix-icon="User"
+              autocomplete="username" />
+          </el-form-item>
+
+          <el-form-item label="邮箱">
+            <el-input v-model="form.email" size="large" placeholder="请输入邮箱" :prefix-icon="Message"
+              autocomplete="email" />
+          </el-form-item>
+        </template>
 
         <el-form-item label="密码">
           <el-input v-model="form.password" size="large" type="password" placeholder="请输入密码" :prefix-icon="Lock"
-            show-password autocomplete="current-password" @keyup.enter="handleLogin" />
+            show-password :autocomplete="isLogin ? 'current-password' : 'new-password'" @keyup.enter="handleSubmit" />
         </el-form-item>
 
-        <el-button class="login-button" type="primary" size="large" :loading="loading" @click="handleLogin">
-          登录
+        <el-form-item v-if="!isLogin" label="确认密码">
+          <el-input v-model="form.confirmPassword" size="large" type="password" placeholder="请再次输入密码"
+            :prefix-icon="Lock" show-password autocomplete="new-password" @keyup.enter="handleSubmit" />
+        </el-form-item>
+
+        <el-button class="login-button" type="primary" size="large" :loading="loading" @click="handleSubmit">
+          {{ isLogin ? '登录' : '注册' }}
         </el-button>
       </el-form>
 
-      <p class="login-note">接口联调前不会真正发送请求，登录逻辑由你稍后补充。</p>
+      <p class="auth-switch">
+        <template v-if="isLogin">
+          还没有账号？
+          <button type="button" @click="switchMode('register')">立即注册</button>
+        </template>
+        <template v-else>
+          已经有账号？
+          <button type="button" @click="switchMode('login')">返回登录</button>
+        </template>
+      </p>
     </section>
   </main>
 </template>
@@ -197,11 +289,23 @@ async function handleLogin() {
   box-shadow: 0 8px 18px rgba(35, 100, 88, .16);
 }
 
-.login-note {
+.auth-switch {
   margin: 18px 0 0;
-  color: #a1a8a3;
-  font-size: 11px;
-  line-height: 1.7;
+  color: #8d9691;
+  font-size: 12px;
   text-align: center;
+}
+
+.auth-switch button {
+  padding: 0;
+  border: 0;
+  color: #236458;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-switch button:hover {
+  color: #1a4f45;
 }
 </style>
