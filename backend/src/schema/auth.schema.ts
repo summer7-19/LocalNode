@@ -8,6 +8,9 @@ export const authSchema = z.object({
     }),
     password:z.string().min(6,'密码最少6个字符').max(12,'密码最多12个字符'),
     email:z.email('请输入正确的邮箱格式'),
+    captchaId:z.string().min(1,'请输入验证码ID'),
+    captchaCode:z.string().min(1,'请输入验证码'),
+    // emailCode:z.string().min(1,'请输入邮箱验证码')
 })
 
 export const acccountSchema=z.string()

@@ -5,7 +5,16 @@ const env = [
     'DB_PORT',
     'DB_USER',
     'DB_PASSWORD',
-    'DB_NAME'
+    'DB_NAME',
+    'JWT_SECRET',
+    'NODE_ENV',
+    'LOG_LEVEL',
+    'SMTP_HOST',
+    'SMTP_PORT',
+    'SMTP_PASS',
+    'SMTP_USER',
+    'SMTP_SECURE',
+    'SMTP_FROM'
 ]
 
 const  getEnv=(key:string)=>{
@@ -29,5 +38,19 @@ export const config = {
     },
     jwt:{
         JWT_SECRET:'secret'
+    },
+    log:{
+        level:getEnv('LOG_LEVEL')
+    },
+    env:{
+        NODE_ENV:getEnv('NODE_ENV')
+    },
+    SMTP:{
+        SMTP_USER:getEnv('SMTP_USER'),
+        SMTP_SECURE:getEnv('SMTP_SECURE'),
+        SMTP_HOST:getEnv('SMTP_HOST'),
+        SMTP_PORT:Number(getEnv('SMTP_PORT')),
+        SMTP_FROM:getEnv('SMTP_FROM'),
+        SMTP_PASS:getEnv('SMTP_PASS')
     }
 }

@@ -33,7 +33,7 @@ LocalNote/
   assets/<time>.*  # 应用托管的图片
 ```
 
-`index.json` 中的文档包含 `id`、`title`、`filePath`、`tags`、`parentId`、`createdAt`、`updatedAt`。应用通过 Electron preload 暴露受限 IPC 接口；渲染进程不启用 Node.js，避免编辑器页面取得完整文件系统权限。
+`index.json` 中的文档包含 `id`、`title`、`tag`、`parentId`、`createTime`、`updateTime`。应用通过 Electron preload 暴露受限 IPC 接口；渲染进程不启用 Node.js，避免编辑器页面取得完整文件系统权限。
 
 ## 5. 非目标与后续迭代
 

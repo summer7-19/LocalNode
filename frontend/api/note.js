@@ -1,17 +1,23 @@
 import request from "./requset";
 
 export function getNote(){
-    return request.get('/')
+    return request.get('/note')
 }
 
-export function getNoteById(){
-    return request.get('/:id')
+export function getNoteById(id){
+    return request.get(`/note/${id}`)
 }
 
-export function updateNote(){
-    return request.put('/:id')
+export function updateNote(id,data){
+    return request.put(`/note/${id}`,data)
 }
 
-export function deleteNote(){
-    return request.delete('/:id')
+export function deleteNote(id){
+    return request.delete(`/note/${id}`)
+}
+
+export function searchNote(key){
+    return request.post('/note/search',{
+        search:key
+    })
 }

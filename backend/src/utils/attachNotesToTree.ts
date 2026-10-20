@@ -3,18 +3,18 @@ import { KnowledgeTreeNode } from "./buildKnowledgeTree";
 
 
 export interface noteNode {
-    noteID:number,
-    parentID:number,
+    id:number,
+    parentId:number,
     userID:number,
-    noteName:string,
+    title:string,
     content:string,
     updateTime:Date,
 }
 
 export interface noteTreeNode {
-    noteID:number,
-    parentID:number,
-    noteName:string,
+    id:number,
+    parentId:number,
+    title:string,
     updateTime:Date,
 }
 
@@ -22,18 +22,18 @@ export function attachNotesToTree(tree:KnowledgeTreeNode[], notes:noteNode[]){
     const map=new Map<number,noteTreeNode[]>();
 
     for(const note of notes){
-        const know=map.get(note.parentID)
+        const know=map.get(note.parentId)
         if(know){
             know.push(note)
         }
         else{
-            map.set(note.parentID,[note])
+            map.set(note.parentId,[note])
         }
     }
 
     function attachNotes(nodes:KnowledgeTreeNode[]):void{
         for(const node of nodes){
-            const know=map.get(node.knowledgeID)
+            const know=map.get(node.id)
             if(know){
                 node.notes.push(...know)
             }

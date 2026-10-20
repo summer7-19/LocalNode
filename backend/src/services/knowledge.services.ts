@@ -21,13 +21,13 @@ export const getKnowledgeId = async (id: number, userId: number) => {
     return result
 }
 
-export const getKnowledgeTreeId = async (id: number, userId: number) => {
+export const getKnowledgeTreeId = async ( userId: number) => {
     const result = await getKnowledgeRepo(userId)
     if (!result) {
         throw new AppError("Not Found", 404)
     }
 
-    const tree = buildKnowledgeTree(result, id)
+    const tree = buildKnowledgeTree(result)
     if (tree.length === 0) {
         throw new AppError("Not Found", 404)
     }
@@ -36,7 +36,7 @@ export const getKnowledgeTreeId = async (id: number, userId: number) => {
 }
 
 export const addKnowledge = async (data: Know, userId: number) => {
-    const exist = await findKnowledgeByNameRepo(data.knowledgeName, userId, data.parentID)
+    const exist = await findKnowledgeByNameRepo(data.title, userId, data.parentId)
     if (exist) {
         throw new AppError("当前知识节点下已经存在同名笔记", 409)
     }

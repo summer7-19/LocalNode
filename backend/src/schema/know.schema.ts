@@ -1,13 +1,13 @@
 import z from 'zod';
 
 export const postKnowSchema = z.object({
-    parentID:z.number().nullable().default(null),
-    knowledgeName:z.string(),
+    parentId:z.number().nullable().default(null),
+    title:z.string(),
     description:z.string(),
 })
 export const updateKnowSchema = z.object({
     // parentID:z.number().nullable().default(null),
-    knowledgeName:z.string(),
+    title:z.string(),
     description:z.string(),
 })
 export type KnowDto = z.infer<typeof postKnowSchema>; 

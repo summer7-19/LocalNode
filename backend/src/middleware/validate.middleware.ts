@@ -1,5 +1,4 @@
 import type { Request,Response,NextFunction, RequestHandler } from "express";
-import { error } from "node:console";
 import { z } from "zod";
 import { AppError } from "../errors/app.error";
 
@@ -8,16 +7,11 @@ import { AppError } from "../errors/app.error";
 type ValidateTarget="body"|"query"|"params"
 
 export const vaildateMiddleware=<T extends z.ZodType>(target:ValidateTarget,schema:T):RequestHandler=>{
-    return (req:Request,res:Response,next:NextFunction)=>{
-        // console.log("验证中间件");
+    return (req,res,next)=>{
         const result=schema.safeParse(req[target]);
         if(!result.success){
-            // res.status(400).json({
-            //     message:"格式错误",
-            //     error:result.error.issues
-            // })
-            throw new AppError("格式错误",400)
-            return
+            const issue=result.error.issues[0]
+            throw new AppError(issue?.message || "格式错误",400)
         }
         req.validated={
             ...req.validated,

@@ -1,5 +1,7 @@
 import type{registerDto, loginDto} from "../schema/auth.schema"
 import { RegisterRepo,LoginRepo } from "../repositories/auth.repositories"
+import { verifyCaptcha } from "./captcha.service"
+import { verifyEmailCode } from "./emailCode.service"
 import bcrypt from "bcrypt"
 import { AppError } from "../errors/app.error"
 import jwt from "jsonwebtoken"
@@ -7,6 +9,14 @@ import { config } from "../config/env"
 
 
 export const RegisterService=async(data:registerDto)=>{
+    const varify= await verifyCaptcha(data.captchaId,data.captchaCode)
+    if(!varify){
+        throw new AppError('验证码错误或过期',400)
+    }
+    // const vaild=await verifyEmailCode(data.email,'register',data.emailCode)
+    // if(!vaild){
+    //     throw new AppError('邮箱验证码错误或过期',400)
+    // }
     const result = await RegisterRepo(data)
     return result
 }

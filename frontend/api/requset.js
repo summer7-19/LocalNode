@@ -12,4 +12,28 @@ const request= axios.create({
     timeout:5000
 })
 
+request.interceptors.request.use(
+    config=>{
+        const token=localStorage.getItem("localnote-token")
+        
+        if(token)
+            config.headers.Authorization=`Bearer ${token}`
+    return config
+    },
+    error=>{
+        return Promise.reject(error)
+    }
+    
+)
+
+
+request.interceptors.response.use(
+    response=>{
+        return response.data
+    },
+    error=>{
+        return Promise.reject(error.response?.data)
+    }
+)
+
 export default request;

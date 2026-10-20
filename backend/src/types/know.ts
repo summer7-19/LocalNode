@@ -1,12 +1,12 @@
 
 export interface postKnow{
-    parentID:number|null,
-    knowledgeName:string,
+    parentId:number|null,
+    title:string,
     description:string,
 }
 
 export interface Know extends postKnow{}
 export interface updateKnow{
-    knowledgeName:string,
+    title:string,
     description:string,
 }

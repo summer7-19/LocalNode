@@ -7,14 +7,14 @@ import request from "./requset";
 //     return request.get('/:id')
 // }
 export function getUserMes(){
-    return request.get('/me')
+    return request.get('/user/me')
 }
 export function createUser(data){
-    return request.post('/',data)
+    return request.post('/user',data)
 }
-export function updateUser(data){
-    return request.put('/:id',data)
+export function updateUser(id,data){
+    return request.put(`/user/${id}`,data)
 }
-export function deleteUser(){
-    return request.delete('/')
+export function deleteUser(id){
+    return request.delete(`/user/${id}`)
 }

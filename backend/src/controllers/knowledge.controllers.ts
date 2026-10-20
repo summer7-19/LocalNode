@@ -25,10 +25,10 @@ export const getKnowledgeIdController =asyncHandler( async (req: Request<{id:str
     res.status(200).json(result)
 })
 
-export const getKnowTreeController =asyncHandler( async (req:Request<{id:string}>, res: Response) => {
-    const id=Number((req.validated.params as { id: string }).id)
+export const getKnowTreeController =asyncHandler( async (req:Request, res: Response) => {
+    // const id=Number((req.validated.params as { id: string }).id)
     const userId=req.user!.id
-    const result=await getKnowledgeTreeId(id,userId)
+    const result=await getKnowledgeTreeId(userId)
     if(result.length===0){
         throw new AppError('没有知识库',404)
     }

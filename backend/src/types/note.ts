@@ -1,12 +1,14 @@
 export interface postNote{
-    noteName:string,
+    title:string,
     content:string,
+    tag:string
 }
 
 export interface Note extends postNote{}
 export interface updateNoteType {
-    parentID:number,
-    noteName:string,
+    parentId:number,
+    title:string,
     content:string,
-    version:number
+    version:number,
+    tag:string
 }

@@ -4,12 +4,12 @@ import NoteApp from '../views/NoteApp.vue'
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: LoginPage
   },
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: NoteApp
   },

@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { getNote,getNoteId,getNoteList, addNote,updateNote, deleteNote } from '../services/note.services';
+import { getNote,getNoteId,getNoteList, addNote,updateNote, deleteNote,searchService } from '../services/note.services';
 import { Note,updateNoteType } from '../types/note';
 import { AppError } from '../errors/app.error';
 import {asyncHandler} from '../utils/asyncHandler';
@@ -69,5 +69,15 @@ export const deleteNoteController = asyncHandler(async (req: Request<{id:string}
     if(result.affectedRows===0){
         throw new AppError('删除笔记失败',404)
     }
+    res.status(200).json(result)
+})
+
+export const searchController = asyncHandler(async (req: Request, res: Response) => {
+    const userId=req.user!.id
+    if(!userId){
+        res.json(401).json({message:'用户未登录'})
+    }
+    const {search}  = req.body
+    const result=await searchService(search,userId)
     res.status(200).json(result)
 })

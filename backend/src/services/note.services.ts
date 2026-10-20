@@ -1,4 +1,4 @@
-import { getNoteRepo,getNoteRepoId,getNoteListRepo,countNoteListRepo,addNoteRepo ,updateNoteRepo,deleteNoteRepo, findNoteByNameRepo, existNoteRepo } from "../repositories/note.repositories"
+import { getNoteRepo,getNoteRepoId,getNoteListRepo,countNoteListRepo,addNoteRepo ,updateNoteRepo,deleteNoteRepo,searchRepo, findNoteByNameRepo, existNoteRepo } from "../repositories/note.repositories"
 import { Note,updateNoteType } from "../types/note"
 import { getKnowledgeId } from "./knowledge.services"
 import { AppError } from "../errors/app.error"
@@ -40,7 +40,7 @@ export const addNote = async (id: number,data: Note,userId:number) => {
     if(!knowledge){
         throw new AppError("knowledge not found",404)
     }
-    const exists= await findNoteByNameRepo(id,data.noteName)
+    const exists= await findNoteByNameRepo(id,data.title)
     if(exists){
         throw new AppError("当前知识节点下已经存在同名笔记",409)
     }
@@ -72,3 +72,10 @@ export const deleteNote = async (id:number,userId:number) => {
     }
     return result
 }
+
+
+export const searchService = async (keyword:string,userId:number) => {
+    const result = await searchRepo(keyword,userId)
+    return result
+}
+

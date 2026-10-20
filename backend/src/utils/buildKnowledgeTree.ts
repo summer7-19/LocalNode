@@ -1,63 +1,98 @@
 import { noteTreeNode } from "./attachNotesToTree";
 
 interface KnowledgeNodeBase {
-    knowledgeID: number;
-    knowledgeName: string;
-    parentID: number | null;
+    id: number;
+    title: string;
+    parentId: number | null;
     userID: number;
     description: string;
 }
 
 
 export interface KnowledgeTreeNode {
-    knowledgeID: number;
-    knowledgeName: string;
-    parentID: number | null;
+    id: number;
+    title: string;
+    parentId: number | null;
     userID: number;
     description: string;
     children: KnowledgeTreeNode[];
     notes: noteTreeNode[];
 }
 
+export const buildKnowledgeTree = (
+    rows: KnowledgeNodeBase[]
+): KnowledgeTreeNode[] => {
 
-export function buildKnowledgeTree(rows: KnowledgeNodeBase[], rootID?: number): KnowledgeTreeNode[] {
     const map = new Map<number, KnowledgeTreeNode>()
     const roots: KnowledgeTreeNode[] = []
+
     for (const row of rows) {
-        const node: KnowledgeTreeNode = {
-            knowledgeID: row.knowledgeID,
-            knowledgeName: row.knowledgeName,
-            parentID: row.parentID,
-            userID: row.userID,
-            description: row.description,
+
+        map.set(row.id, {
+            ...row,
             children: [],
             notes: []
-        }
-        map.set(row.knowledgeID, node)
-        if (row.parentID === null) {
-            roots.push(node)
-        }
+        })
     }
-    
+
     for (const row of rows) {
-        const node = map.get(row.knowledgeID)
-        if (!node) {
-            continue
-        }
-        if (row.parentID !== null) {
-            const parent = map.get(row.parentID)
+
+        const node = map.get(row.id)!
+
+        if (row.parentId === null) {
+
+            roots.push(node)
+
+        } else {
+
+            const parent = map.get(row.parentId)
+
             if (parent) {
-                parent.children.push(node as KnowledgeTreeNode)
+                parent.children.push(node)
             }
         }
     }
 
-    if (rootID !== undefined) {
-        const root = map.get(rootID)
-        if (!root) {
-            return []
-        }
-        return [root]
-    }
     return roots
 }
+// export function buildKnowledgeTree(rows: KnowledgeNodeBase[], rootID?: number): KnowledgeTreeNode[] {
+//     const map = new Map<number, KnowledgeTreeNode>()
+//     const roots: KnowledgeTreeNode[] = []
+//     for (const row of rows) {
+//         const node: KnowledgeTreeNode = {
+//             knowledgeID: row.knowledgeID,
+//             knowledgeName: row.knowledgeName,
+//             parentID: row.parentID,
+//             userID: row.userID,
+//             description: row.description,
+//             children: [],
+//             notes: []
+//         }
+//         map.set(row.knowledgeID, node)
+//         if (row.parentID === null) {
+//             roots.push(node)
+//         }
+//     }
+    
+//     for (const row of rows) {
+//         const node = map.get(row.knowledgeID)
+//         if (!node) {
+//             continue
+//         }
+//         if (row.parentID !== null) {
+//             const parent = map.get(row.parentID)
+//             if (parent) {
+//                 parent.children.push(node as KnowledgeTreeNode)
+//             }
+//         }
+//     }
+
+//     if (rootID !== undefined) {
+//         const root = map.get(rootID)
+//         if (!root) {
+//             return []
+//         }
+//         return [root]
+//     }
+//     return roots
+// }

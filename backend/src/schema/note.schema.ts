@@ -1,14 +1,17 @@
+import { title } from 'node:process';
 import z from 'zod';
 
 export const postNoteSchema = z.object({
-    noteName:z.string(),
+    title:z.string(),
     content:z.string(),
+    tag:z.string(),
 })
 export const updateNoteSchema = z.object({
-    parentID:z.number(),
-    noteName:z.string(),
+    parentId:z.number(),
+    title:z.string(),
     content:z.string(),
-    version:z.number()
+    version:z.number(),
+    tag:z.string(),
 })
 export type NoteDto = z.infer<typeof postNoteSchema>; 
 export type updateNoteDto = z.infer<typeof updateNoteSchema>;
